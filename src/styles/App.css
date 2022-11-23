@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    margin: 0 auto;
+}
+
+.scoreboard {
+    display: flex;
+
+    max-width: 575px;
+    height: 385px;
+
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    background-color: #1B244A;
+}
+
+.home-scoreboard-title,
+.guest-scoreboard-title {
+    font-family: "Verdana";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 36px;
+
+    color: #EEEEEE;
+
+    margin: 0;
+    margin-bottom: 21px;
+
+    text-align: center;
+}
+
+.home-scoreboard-view,
+.guest-scoreboard-view {
+    max-width: 155px;
+    height: 120px;
+
+    background: #080001;
+    border-radius: 5px;
+
+    margin-bottom: 26px;
+}
+
+.home-scoreboard-score,
+.guest-scoreboard-score {
+    width: 117px;
+    height: 120px;
+
+    font-family: 'Digital', arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 127px;
+
+    color: #F94F6D;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.home-scoreboard-addscore,
+.guest-scoreboard-addscore {
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+}
+
+.button-addscore {
+    width: 45px;
+    height: 45px;
+
+    border: 2px solid #9AABD8;
+    border-radius: 5px;
+
+    font-family: 'Digital', arial;
+    color: #9AABD8;
+    background-color: #1B244A;
+}
+
+.button-addscore:hover {
+    cursor: pointer;
+}
+
+.new-game {
+    width: 100px;
+    height: 50px;
+
+    display: block;
+    margin: 0 auto;
+
+    background-color: #1B244A;
+    border: 2px solid blue;
+
+    color: aqua;
+}
+
+.new-game:hover {
+    background-color: rgb(0, 255, 170);
+    cursor: pointer;
+
+    color: #1B244A;
+}
+
+@font-face {
+    font-family: "Verdana";
+    src: url(../fonts/Verdana/Verdana.ttf);
+}
+
+@font-face {
+    font-family: "Digital";
+    src: url(../fonts/Digital/digital.ttf);
+}
