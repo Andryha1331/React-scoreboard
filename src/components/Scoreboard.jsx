@@ -6,41 +6,12 @@ const Scoreboard = function () {
   const [pointsGuest, addPointsGuest] = useState(0);
 
   function reStart() {
-    console.log(pointsHome);
-    console.log(pointsGuest);
-
     addPointsHome(0);
     addPointsGuest(0);
-
-    console.log(pointsHome);
-    console.log(pointsGuest);
-  }
-
-  function scoreBoardMain() {
-    document
-      .querySelectorAll(".scoreboard-event-temp")
-      .forEach((element) => {
-        element.addEventListener("click", (event) => {
-          if (!event.target.dataset.score) return;
-
-          const score = Number(event.target.dataset.score);
-
-          const scoreElement = event.target
-            .closest(".scoreboard-temp")
-            .querySelector(".scoreboard-score-temp");
-
-          if (scoreElement.classList.contains('home-scoreboard-score')) {
-            addPointsHome(pointsHome + score);
-          }
-          else {
-            addPointsGuest(pointsGuest + score);
-          }
-        });
-      })
   }
 
   return (
-    <><div className="scoreboard" onClick={scoreBoardMain}>
+    <><div className="scoreboard">
       <div className="home-scoreboard scoreboard-temp">
         <p className="home-scoreboard-title">HOME</p>
 
@@ -49,15 +20,15 @@ const Scoreboard = function () {
         </div>
 
         <div className="home-scoreboard-addscore scoreboard-event-temp">
-          <button className="button-addscore" data-score="1">
+          <button className="button-addscore" onClick={() => addPointsHome(pointsHome + 1)}>
             + 1
           </button>
 
-          <button className="button-addscore" data-score="2">
+          <button className="button-addscore" onClick={() => addPointsHome(pointsHome + 2)}>
             + 2
           </button>
 
-          <button className="button-addscore" data-score="3">
+          <button className="button-addscore" onClick={() => addPointsHome(pointsHome + 3)}>
             + 3
           </button>
         </div>
@@ -72,23 +43,21 @@ const Scoreboard = function () {
         </div>
 
         <div className="guest-scoreboard-addscore scoreboard-event-temp">
-          <button className="button-addscore" data-score="1">
+          <button className="button-addscore" onClick={() => addPointsGuest(pointsGuest + 1)}>
             + 1
 
           </button>
 
-          <button className="button-addscore" data-score="2">
+          <button className="button-addscore" onClick={() => addPointsGuest(pointsGuest + 2)}>
             + 2
           </button>
 
-          <button className="button-addscore" data-score="3">
+          <button className="button-addscore" onClick={() => addPointsGuest(pointsGuest + 3)}>
             + 3
           </button>
         </div>
       </div>
-    </div>
-
-      <button className="new-game" onClick={reStart}> New Game </button></>
+    </div><button className="new-game" onClick={reStart}> New Game </button></>
   )
 }
 
